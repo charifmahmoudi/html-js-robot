@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="US-ASCII">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Helium drone controller">
+    <meta name="author" content="Charif Mahmoudi">
+
+    <title>Hellium drone controller</title>
+
+    <!-- core CSS -->
+    <link href="http://seiyria.com/bootstrap-slider/dependencies/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://seiyria.com/bootstrap-slider/css/bootstrap-slider.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <style type='text/css'>
+    	/* Space out content a bit */
+		body {
+		  padding-top: 20px;
+		  padding-bottom: 20px;
+		}
+
+		h1 small {
+			font-size: 51%;
+		}
+
+		/* Everything but the jumbotron gets side spacing for mobile first views */
+		.header,
+		.marketing,
+		.footer {
+		  padding-left: 15px;
+		  padding-right: 15px;
+		}
+
+		/* Custom page header */
+		.header {
+		  border-bottom: 1px solid #e5e5e5;
+		}
+		/* Make the masthead heading the same height as the navigation */
+		.header h3 {
+		  margin-top: 0;
+		  margin-bottom: 0;
+		  line-height: 40px;
+		  padding-bottom: 19px;
+		}
+
+		/* Custom page footer */
+		.footer {
+		  padding-top: 19px;
+		  color: #777;
+		  border-top: 1px solid #e5e5e5;
+		}
+
+		/* Customize container */
+		.container {
+			min-width: 640px;
+		}
+		@media (min-width: 768px) {
+		  .container {
+		    max-width: 1000px;
+		  }
+		}
+		.container-narrow > hr {
+		  margin: 30px 0;
+		}
+
+		/* Main marketing message and sign up button */
+		.title {
+		  text-align: center;
+		  border-bottom: 1px solid #e5e5e5;
+		}
+
+		/* Responsive: Portrait tablets and up */
+		@media screen and (min-width: 768px) {
+		  /* Remove the padding we set earlier */
+		  .header,
+		  .footer {
+		    padding-left: 0;
+		    padding-right: 0;
+		  }
+		  /* Space out the masthead */
+		  .header {
+		    margin-bottom: 30px;
+		  }
+		  /* Remove the bottom border on the jumbotron for visual effect */
+		  .title {
+		    border-bottom: 0;
+		  }
+		}
+
+		.well {
+			background-color: #E0E0E0;
+		}
+
+		.slider-example {
+			padding: 10px 0;
+			margin: 35px 0;
+		}
+
+		#destroyEx5Slider, #ex6CurrentSliderValLabel, #ex7-enabled {
+			margin-left: 45px;
+		}
+
+		#ex6SliderVal {
+			color: green;
+		}
+
+		#slider12a .slider-track-high, #slider12c .slider-track-high {
+			background: green;
+		}
+
+		#slider12b .slider-track-low, #slider12c .slider-track-low {
+			background: red;
+		}
+
+		#slider12c .slider-selection {
+			background: yellow;
+		}
+
+    </style>
+
+    <style type='text/css'>
+		/* Example 1 custom styles */
+		#ex1Slider .slider-selection {
+   			background: #BABABA;
+  		}
+
+    </style>
+	<script type='text/javascript' src="http://seiyria.com/bootstrap-slider/dependencies/js/modernizr.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://seiyria.com/bootstrap-slider/../../assets/js/html5shiv.js"></script>
+      <script src="http://seiyria.com/bootstrap-slider/../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="jumbotron">
+        <h1>Hellium Drone Controller <small>V0.1</small></h1>
+        <p class="lead"> <div id="status">Connecting...</div><p>
+      </div>
+<div class='slider-example'>
+      		<h3>Control </h3>
+      		<div class="well">
+				<div class="form-group">
+				  <label for="usr">Altitide :</label>
+				  <input id="altitide" type="text" data-slider-min="-1023" data-slider-max="1023" data-slider-step="2" data-slider-value="0" data-slider-orientation="vertical"/>
+				</div>
+      			<div class="form-group">
+				  <label for="usr">Speed :</label>
+				  <input id="speed" data-slider-id='ex1Slider' type="text" data-slider-min="-1023" data-slider-max="1023" data-slider-step="2" data-slider-value="0"/>
+				</div>
+      			<div class="form-group">
+				  <label for="usr">Position :</label>
+				  <input id="position" data-slider-id='ex2Slider' type="text" data-slider-min="-1023" data-slider-max="1023" data-slider-step="2" data-slider-value="0"/>
+				</div>
+
+      		</div>
+</div>
+
+    </div> <!-- /container -->
+
+
+    <!-- core JavaScript
+    ================================================== -->
+    <script type='text/javascript' src="http://seiyria.com/bootstrap-slider/dependencies/js/jquery.min.js"></script>
+    <script type='text/javascript' src="http://seiyria.com/bootstrap-slider/js/bootstrap-slider.js"></script>
+    <script type='text/javascript' charset="US-ASCII">
+    var connection;
+
+    var sliderChange = function(ev){
+        console.log(ev.target.id);
+        var value = $(this).data('slider').getValue();
+        var dir = false;
+        if(value < 0)
+        {
+            dir = true;
+            value = value * -1;
+        }
+        //var chr = String.fromCharCode(value);
+
+        var source = [];
+
+        if(ev.target.id == 'position')
+        {
+            source = [3,4,5];
+        }
+        if(ev.target.id == 'speed')
+        {
+            source = [9,10,11];
+        }
+        if(ev.target.id == 'altitide')
+        {
+            source = [3,4,5];
+        }
+        var ret =  {
+					'pin' : source,
+					'dir' : dir,
+					'value': value
+					};
+        $('#status').text('Sending : ' + JSON.stringify(ret) );
+
+
+
+        connection.send(JSON.stringify(ret));
+    };
+
+
+    $(document).ready(function() {
+			bindDOMEvents();
+
+            $('#speed').slider({
+                formater: function(value) {
+                    return 'Current value: '+value;
+                }
+            }).on('slideStop', sliderChange );
+
+            $('#altitide').slider({
+                reversed : true,
+                formater: function(value) {
+                    return 'Current value: '+value;
+                }
+            }).on('slideStop', sliderChange);
+
+            $('#position').slider({
+                reversed : true,
+                formater: function(value) {
+                    return 'Current value: '+value;
+                }
+            }).on('slideStop', sliderChange);
+
+
+            var GPSChange = function() {
+                $('#status').text('Current GPS value: ' + value);
+            };
+
+            $(function () {
+                connection = new WebSocket('ws://10.0.0.38:80');
+                connection.onopen = function () {
+                    $('#status').text('You are connected to Helium drone.');
+                };
+                connection.onerror = function (error) {
+                    $('#status').text('Sorry, but there\'s some problem with your connection or the server is down.' );
+
+                };
+                connection.onclose = function () {
+                    console.log('You are disconnected to Hellium drone.');
+                    alert("You are disconnected to Hellium drone.");
+
+                };
+
+                // Log messages from the server
+                connection.onmessage = function (e) {
+                    console.log('Server: ' + e.data);
+                };
+            });
+
+
+    });
+
+
+
+	var validNavigation = 0;
+
+	function endSession()
+	{
+	   // Browser or Broswer tab is closed
+	   // Write code here
+	   var confirmationMessage = 'Disconnecting to Helium drone.';  // a space
+		$('#status').text(confirmationMessage);
+        connection.close();
+	}
+
+	function bindDOMEvents() {
+		/*
+
+		* unload works on both closing tab and on refreshing tab.
+
+		*/
+		$(window).unload(function()
+		{
+		   if (validNavigation==0)
+		   {
+			 endSession();
+		   }
+		});
+
+		// Attach the event keypress to exclude the F5 refresh
+		$(document).keydown(function(e)
+		{
+		   var key=e.which || e.keyCode;
+		   if (key == 116)
+		   {
+			 validNavigation = 1;
+		   }
+		});
+
+		// Attach the event click for all links in the page
+		$("a").bind("click", function()
+		{
+		   validNavigation = 1;
+		});
+
+		 // Attach the event submit for all forms in the page
+		 $("form").bind("submit", function()
+		{
+		   validNavigation = 1;
+		});
+
+		 // Attach the event click for all inputs in the page
+		 $("input[type=submit]").bind("click", function()
+		{
+		   validNavigation = 1;
+		});
+
+	}
+
+
+
+    </script>
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>
