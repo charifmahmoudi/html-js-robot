@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b49e8bb-72b6-4901-93cf-ea9ec9663d34" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-102b93ab557905f68ac622cdcdd30592f551714ce5b1fe12727573e67b1d2327-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-2fe61c3985e01d6209ba7db0c477e3c50617b86ece08b64c9923d36d0c943fe1-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-358cf99c7a42ddf5c278614d452e29c368aed266153e545a77911820b035297c-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-5bf8be3e98bc8e556a28b3b9888c4ed29371449c022008de7bdf5b9c201d5bfa-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-6d13918c519600109baacb3371136204a13af3c294b781fbbe4d541da78877d5-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-76456b6e80ef2451ddb49d368055174950b441da440d3609fdf8a5d74d4e773e-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-99c779a90a2c958150b9866f9d0c2c85cb70589b0b5f3aaefbe6bf57465f05db-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-a985eb5e8c6f4b360eb255a3f8240291736e7436858e56dedc27c48bc266d11a-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-bbd55cbf2cca8934838d07217e4b649e38fafd7e15ae20e749c86112b74a3a79-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/Viber Images/image-d37f4e57c7b58d662ea891cfa5f2c7080f9ad40f7b47d0d6c23fe54262531926-V.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/media_v1/axes.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/bbg.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-102b93ab557905f68ac622cdcdd30592f551714ce5b1fe12727573e67b1d2327-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-2fe61c3985e01d6209ba7db0c477e3c50617b86ece08b64c9923d36d0c943fe1-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-358cf99c7a42ddf5c278614d452e29c368aed266153e545a77911820b035297c-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-5bf8be3e98bc8e556a28b3b9888c4ed29371449c022008de7bdf5b9c201d5bfa-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-6d13918c519600109baacb3371136204a13af3c294b781fbbe4d541da78877d5-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-76456b6e80ef2451ddb49d368055174950b441da440d3609fdf8a5d74d4e773e-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-99c779a90a2c958150b9866f9d0c2c85cb70589b0b5f3aaefbe6bf57465f05db-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-a985eb5e8c6f4b360eb255a3f8240291736e7436858e56dedc27c48bc266d11a-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-bbd55cbf2cca8934838d07217e4b649e38fafd7e15ae20e749c86112b74a3a79-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Images/image-d37f4e57c7b58d662ea891cfa5f2c7080f9ad40f7b47d0d6c23fe54262531926-V.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Videos/video-5d42633551618ef97772e63d1c7034d43d79bdc2d56f38199a5de33521816e10-V.mp4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/media/Viber Videos/video-c261b607f36d8820483a1bd890ecad58ef5938d32508487a54c47e6feec4e9c7-V.mp4" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/LinkitOneCode/LinkitOneCode.ino" afterPath="$PROJECT_DIR$/media_v1/LinkitOneCode/LinkitOneCode.ino" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/car.html" afterPath="$PROJECT_DIR$/app/car.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.html" afterPath="$PROJECT_DIR$/app/index.html" />
     </list>
     <ignored path="mobile-navigation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -83,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bbg.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bbg.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/bbg.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="403">
@@ -93,11 +64,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="car.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="car.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/car.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
+            <state relative-caret-position="96">
+              <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -131,8 +102,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="24" column="128" selection-start-line="24" selection-start-column="128" selection-end-line="24" selection-end-column="128" />
+            <state relative-caret-position="17">
+              <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -463,19 +434,35 @@
       <updated>1454207657377</updated>
       <workItem from="1458276371575" duration="3109000" />
       <workItem from="1458518501841" duration="5298000" />
-      <workItem from="1460023923608" duration="3754000" />
+      <workItem from="1460023923608" duration="4652000" />
     </task>
+    <task id="LOCAL-00001" summary="V2 using BeagleBone Green">
+      <created>1460028725731</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1460028725731</updated>
+    </task>
+    <task id="LOCAL-00002" summary="V2 using BeagleBone Green">
+      <created>1460029086657</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1460029086657</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12161000" />
+    <option name="totallyTimeSpent" value="13059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1604" height="867" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24968071" sideWeight="0.3266129" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24968071" sideWeight="0.3266129" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24968071" sideWeight="0.6733871" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32425067" sideWeight="0.5376756" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -528,6 +515,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="V2 using BeagleBone Green" />
+    <option name="LAST_COMMIT_MESSAGE" value="V2 using BeagleBone Green" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -912,17 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="24" column="128" selection-start-line="24" selection-start-column="128" selection-end-line="24" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/awscoffee.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -931,18 +911,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/car.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="102" column="38" selection-start-line="102" selection-start-column="38" selection-end-line="102" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/bbg.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="69" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/car.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="72" column="28" selection-start-line="72" selection-start-column="28" selection-end-line="72" selection-end-column="28" />
           <folding />
         </state>
       </provider>

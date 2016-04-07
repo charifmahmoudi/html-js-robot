@@ -69,8 +69,8 @@ if (window.DeviceMotionEvent != undefined) {
     connection.onopen = function () {
       document.getElementById("sending").innerHTML = 'You are connected to Robot.';
       var ret = {
-        left : getJsonRet(0,[3,4,5]),
-        right : getJsonRet(1,[9,10,11])
+        left : getJsonRet(0,['P8_13','P8_12','P8_11']),
+        right : getJsonRet(1,['P8_19','P8_18','P8_17'])
       };
       document.getElementById("sending").innerHTML = 'Sending : ' + JSON.stringify(ret);
       connection.send(JSON.stringify(ret));
@@ -99,8 +99,6 @@ if (window.DeviceMotionEvent != undefined) {
     var ret = {
       left : getJsonRet(vr,['P8_13','P8_12','P8_11']),
       right : getJsonRet(vl,['P8_19','P8_18','P8_17'])
-      left : getJsonRet(vr,[3,4,5]),
-      right : getJsonRet(vl,[9,10,11])
     };
     document.getElementById("sending").innerHTML = 'Sending : ' + JSON.stringify(ret);
     connection.send(JSON.stringify(ret));
