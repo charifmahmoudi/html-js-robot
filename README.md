@@ -22,4 +22,4 @@ One of the main concerns for the web based IoT control is the protocol used for 
 Once the connection is established using the websocket you need a representation for the data that you will exchange between the webpage and your device. JSON is a very good choice for this propose. for this project, the representation used is composed from an object containing two attribute "left" and "right" for the wheels. Each attribute is as object composed from the "pin" that represents the 3 pins used to control a DC motor using a H-Bridge in the board, "dir" the direction of the wheel, and the "value" of the speed.
 
 ## Links
-[Hackster.io project](https://www.hackster.io/charifmahmoudi/robot-controlled-using-html5-javascript-and-linkitone-dc779f)
+[Hackster.io project](https://www.hackster.io/charifmahmoudi/robot-controlled-using-html5-javascript-and-beaglebone-green-dc779f)

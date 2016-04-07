@@ -141,23 +141,13 @@
       <div class="jumbotron">
         <h1>Hellium Drone Controller <small>V0.1</small></h1>
         <p class="lead"> <div id="status">Connecting...</div><p>
+        <p class="lead"> <div id="payload">Connecting...</div><p>
       </div>
 <div class='slider-example'>
       		<h3>Control </h3>
       		<div class="well">
-				<div class="form-group">
 				  <label for="usr">Altitide :</label>
 				  <input id="altitide" type="text" data-slider-min="-1023" data-slider-max="1023" data-slider-step="2" data-slider-value="0" data-slider-orientation="vertical"/>
-				</div>
-      			<div class="form-group">
-				  <label for="usr">Speed :</label>
-				  <input id="speed" data-slider-id='ex1Slider' type="text" data-slider-min="-1023" data-slider-max="1023" data-slider-step="2" data-slider-value="0"/>
-				</div>
-      			<div class="form-group">
-				  <label for="usr">Position :</label>
-				  <input id="position" data-slider-id='ex2Slider' type="text" data-slider-min="-1023" data-slider-max="1023" data-slider-step="2" data-slider-value="0"/>
-				</div>
-
       		</div>
 </div>
 
@@ -170,62 +160,72 @@
     <script type='text/javascript' src="http://seiyria.com/bootstrap-slider/js/bootstrap-slider.js"></script>
     <script type='text/javascript' charset="US-ASCII">
     var connection;
+    var connected = false;
+
+    var dx = 0, dy = 0, da = 0;
+
 
     var sliderChange = function(ev){
         console.log(ev.target.id);
-        var value = $(this).data('slider').getValue();
-        var dir = false;
-        if(value < 0)
-        {
-            dir = true;
-            value = value * -1;
-        }
-        //var chr = String.fromCharCode(value);
+        da = $(this).data('slider').getValue();
 
-        var source = [];
-
-        if(ev.target.id == 'position')
-        {
-            source = [3,4,5];
-        }
-        if(ev.target.id == 'speed')
-        {
-            source = [9,10,11];
-        }
-        if(ev.target.id == 'altitide')
-        {
-            source = [3,4,5];
-        }
-        var ret =  {
-					'pin' : source,
-					'dir' : dir,
-					'value': value
-					};
-        $('#status').text('Sending : ' + JSON.stringify(ret) );
-
-
-
-        connection.send(JSON.stringify(ret));
     };
 
 
+    function buildPayload(rf,rb,lf,lb){
+
+      var ret = {
+        lf : getJsonRet(lf),
+        rf : getJsonRet(rf),
+        lb : getJsonRet(lb),
+        rb : getJsonRet(rb)
+      };
+      return ret;
+    }
+    function getDirection(){
+      var rf = da + dy + dx;
+      var lf = da + dy - dx;
+      var rb = da - dy + dx;
+      var lb = da - dy - dx;
+
+//
+      var ret = buildPayload(rf,rb,lf,lb);
+      $('#payload').text('Sending : ' + JSON.stringify(ret));
+
+      connection.send(JSON.stringify(ret));
+      return ret;
+    }
+    function getJsonRet(value){
+      //value = Math.round( value * 20 );
+
+      var ret =  {
+        'v': value
+      };
+      return ret;
+    }
+    function updateAccelerometer() {
+      if (window.DeviceMotionEvent != undefined) {
+        window.ondevicemotion = function (e) {
+          dx = Math.round( e.accelerationIncludingGravity.x * 100 );
+          dy = Math.round( e.accelerationIncludingGravity.y * 100 );
+          document.getElementById("accelerationX").innerHTML = e.accelerationIncludingGravity.x;
+          document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y;
+          document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z;
+        }
+
+      }
+    }
     $(document).ready(function() {
 			bindDOMEvents();
+      updateAccelerometer();
+      setInterval( function() {
+        if(connected){
+          getDirection();
+        }
 
-            $('#speed').slider({
-                formater: function(value) {
-                    return 'Current value: '+value;
-                }
-            }).on('slideStop', sliderChange );
+      }, 200);
 
             $('#altitide').slider({
-                reversed : true,
-                formater: function(value) {
-                    return 'Current value: '+value;
-                }
-            }).on('slideStop', sliderChange);
-
-            $('#position').slider({
                 reversed : true,
                 formater: function(value) {
                     return 'Current value: '+value;
@@ -241,6 +241,11 @@
                 connection = new WebSocket('ws://10.0.0.38:80');
                 connection.onopen = function () {
                     $('#status').text('You are connected to Helium drone.');
+                  //buildPayload(rf,rb,lf,lb)
+                  var ret = buildPayload(0,0,0,0);
+                  $('#payload').text('Sending : ' + JSON.stringify(ret));
+                  connection.send(JSON.stringify(ret));
+                  connected = true;
                 };
                 connection.onerror = function (error) {
                     $('#status').text('Sorry, but there\'s some problem with your connection or the server is down.' );
@@ -282,10 +287,7 @@
 		*/
 		$(window).unload(function()
 		{
-		   if (validNavigation==0)
-		   {
 			 endSession();
-		   }
 		});
 
 		// Attach the event keypress to exclude the F5 refresh
@@ -298,23 +300,6 @@
 		   }
 		});
 
-		// Attach the event click for all links in the page
-		$("a").bind("click", function()
-		{
-		   validNavigation = 1;
-		});
-
-		 // Attach the event submit for all forms in the page
-		 $("form").bind("submit", function()
-		{
-		   validNavigation = 1;
-		});
-
-		 // Attach the event click for all inputs in the page
-		 $("input[type=submit]").bind("click", function()
-		{
-		   validNavigation = 1;
-		});
 
 	}
 
